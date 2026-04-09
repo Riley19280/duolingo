@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Duolingo Scraper",
+  "version": "1.0.0",
+  "description": "Capture and save web requests on Duolingo.com",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "*://*.duolingo.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.duolingo.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Duolingo Scraper"
+  },
+"web_accessible_resources": [
+    {
+      "resources": ["interceptor.js"],
+      "matches": ["*://*.duolingo.com/*"]
+    }
+  ]
+}
