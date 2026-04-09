@@ -2,9 +2,11 @@
 
 namespace App\Library;
 
+use App\Models\Character;
 use App\Models\Section;
+use App\Models\User;
+use App\Models\UserWord;
 use App\Models\Word;
-use App\Models\WordToken;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
@@ -19,37 +21,47 @@ class VocabularyStats
     }
 
     /**
-     * Number of distinct Han characters that appear across all word tokens.
+     * Number of distinct Han characters across the vocabulary.
      */
     public function uniqueCharacterCount(): int
     {
-        return WordToken::distinct('character')->count('character');
+        return Character::count();
     }
 
     /**
      * Word counts grouped by state (AVAILABLE, LOCKED, …).
+     * Optionally scoped to a single user.
      *
      * @return Collection<string, int>
      */
-    public function wordsByState(): Collection
+    /**
+     * Word counts split by availability.
+     * Returns a collection with 'available' and 'locked' keys.
+     *
+     * @return Collection<string, int>
+     */
+    public function wordsByAvailability(?User $user = null): Collection
     {
-        return Word::select('state', DB::raw('count(*) as total'))
-            ->groupBy('state')
-            ->orderBy('state')
-            ->pluck('total', 'state');
+        return UserWord::query()
+            ->when($user, fn ($q) => $q->where('user_id', $user->id))
+            ->select('is_available', DB::raw('count(*) as total'))
+            ->groupBy('is_available')
+            ->get()
+            ->pluck('total', 'is_available')
+            ->mapWithKeys(fn ($total, $isAvailable) => [$isAvailable ? 'available' : 'locked' => $total]);
     }
 
     /**
-     * All words that contain the given character anywhere in their token list.
+     * All words that contain the given Han character.
      *
      * @return Collection<int, Word>
      */
     public function wordsContaining(string $character): Collection
     {
-        return Word::whereHas('tokens', fn ($query) => $query->where('character', $character))
-            ->with('tokens')
-            ->orderBy('text')
-            ->get();
+        return Word::whereHas(
+            'characters.character',
+            fn ($query) => $query->where('character', $character)
+        )->orderBy('text')->get();
     }
 
     /**
@@ -66,14 +78,13 @@ class VocabularyStats
     }
 
     /**
-     * Top characters by number of words they appear in.
+     * Characters that appear in the most words, descending.
      *
-     * @return Collection<int, object{character: string, word_count: int}>
+     * @return Collection<int, Character>
      */
     public function topCharacters(int $limit = 20): Collection
     {
-        return WordToken::select('character', DB::raw('count(distinct word_id) as word_count'))
-            ->groupBy('character')
+        return Character::withCount('wordCharacters as word_count')
             ->orderByDesc('word_count')
             ->limit($limit)
             ->get();
@@ -89,7 +100,7 @@ class VocabularyStats
         return [
             'uniqueWords' => $this->uniqueWordCount(),
             'uniqueCharacters' => $this->uniqueCharacterCount(),
-            'byState' => $this->wordsByState(),
+            'byAvailability' => $this->wordsByAvailability(),
         ];
     }
 }

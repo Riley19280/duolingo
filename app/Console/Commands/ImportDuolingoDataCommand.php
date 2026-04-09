@@ -3,9 +3,12 @@
 namespace App\Console\Commands;
 
 use App\Library\VocabularyStats;
+use App\Models\Character;
 use App\Models\Section;
+use App\Models\User;
+use App\Models\UserWord;
 use App\Models\Word;
-use App\Models\WordToken;
+use App\Models\WordCharacter;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
@@ -34,14 +37,20 @@ class ImportDuolingoDataCommand extends Command
             return self::SUCCESS;
         }
 
+        $user = User::first();
+
+        if (! $user) {
+            $this->error('No users found — run the user seeder first.');
+
+            return self::FAILURE;
+        }
+
         $this->info('Found '.count($files).' file(s). Importing…');
         $this->newLine();
 
         foreach ($files as $file) {
-            $this->importFile($file);
+            $this->importFile($file, $user);
         }
-
-        // ── Summary ───────────────────────────────────────────────────────────
 
         $summary = $stats->summary();
 
@@ -51,14 +60,13 @@ class ImportDuolingoDataCommand extends Command
             [
                 ['Unique words', $summary['uniqueWords']],
                 ['Unique characters', $summary['uniqueCharacters']],
-                ...$summary['byState']->map(fn ($count, $state) => [ucfirst(strtolower($state)), $count])->values()->all(),
             ]
         );
 
         return self::SUCCESS;
     }
 
-    private function importFile(string $file): void
+    private function importFile(string $file, User $user): void
     {
         $requests = json_decode(file_get_contents($file), associative: true);
 
@@ -70,7 +78,7 @@ class ImportDuolingoDataCommand extends Command
 
         $this->line('  Processing <fg=cyan>'.basename($file).'</> ('.count($requests).' request(s))');
 
-        DB::transaction(function () use ($requests) {
+        DB::transaction(function () use ($requests, $user) {
             foreach ($requests as $request) {
                 $sections = Arr::get($request, 'responseBody.sections', []);
 
@@ -82,10 +90,23 @@ class ImportDuolingoDataCommand extends Command
                     foreach (Arr::get($sectionData, 'words', []) as $wordData) {
                         $word = $this->upsertWord($wordData);
                         $wordIds[] = $word->id;
+
+                        UserWord::updateOrCreate(
+                            ['user_id' => $user->id, 'word_id' => $word->id],
+                            ['is_available' => Arr::get($wordData, 'state') === 'AVAILABLE'],
+                        );
                     }
 
-                    // Attach all words to this section without removing existing links
                     $section->words()->syncWithoutDetaching($wordIds);
+                }
+
+                $strokeData = Arr::get($request, 'responseBody.strokeData');
+                $queriedChar = Arr::get($request, 'responseBody.title');
+
+                if ($strokeData && $queriedChar) {
+                    Character::where('character', $queriedChar)
+                        ->whereNull('strokes')
+                        ->update(['strokes' => json_encode($strokeData)]);
                 }
             }
         });
@@ -120,25 +141,27 @@ class ImportDuolingoDataCommand extends Command
                 'translation' => Arr::get($wordData, 'translation'),
                 'pinyin' => Arr::get($wordData, 'transliteration'),
                 'tts_url' => Arr::get($wordData, 'tts'),
-                'state' => Arr::get($wordData, 'state', 'LOCKED'),
             ]
         );
 
-        // Only write tokens when the word is new — existing words already have them
         if ($word->wasRecentlyCreated) {
+            $now = now();
             $tokens = collect(Arr::get($wordData, 'transliterationObj.tokens', []))
                 ->map(fn (array $token, int $position) => [
                     'word_id' => $word->id,
-                    'character' => $token['token'],
+                    'character_id' => Character::firstOrCreate(
+                        ['character' => $token['token']],
+                        ['created_at' => $now, 'updated_at' => $now],
+                    )->id,
                     'pinyin' => Arr::get($token, 'transliterationTexts.0.text', ''),
                     'position' => $position,
-                    'created_at' => now(),
-                    'updated_at' => now(),
+                    'created_at' => $now,
+                    'updated_at' => $now,
                 ])
                 ->values()
                 ->all();
 
-            WordToken::insert($tokens);
+            WordCharacter::insert($tokens);
         }
 
         return $word;

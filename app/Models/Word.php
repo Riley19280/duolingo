@@ -7,16 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['text', 'translation', 'pinyin', 'tts_url', 'state'])]
+#[Fillable(['text', 'translation', 'pinyin', 'tts_url'])]
 class Word extends Model
 {
-    public function tokens(): HasMany
+    public function characters(): HasMany
     {
-        return $this->hasMany(WordToken::class)->orderBy('position');
+        return $this->hasMany(WordCharacter::class)->orderBy('position');
     }
 
     public function sections(): BelongsToMany
     {
         return $this->belongsToMany(Section::class);
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class)->using(UserWord::class)->withPivot('is_available')->withTimestamps();
     }
 }

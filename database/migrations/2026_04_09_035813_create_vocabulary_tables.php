@@ -8,57 +8,70 @@ return new class extends Migration
 {
     public function up(): void
     {
-        // Course sections, e.g. "Section 2, Unit 3"
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
-            $table->string('duolingo_id')->unique();    // Duolingo's own identifier ("0", "12", …)
-            $table->string('title');                    // Human-readable label, e.g. "Section 2, Unit 3"
-            $table->string('description')->nullable();                    // Human-readable label, e.g. "Section 2, Unit 3"
-            $table->unsignedSmallInteger('section_number'); // Parsed from title
-            $table->unsignedSmallInteger('unit_number');    // Parsed from title
+            $table->string('duolingo_id')->unique();
+            $table->string('title');
+            $table->string('description')->nullable();
+            $table->unsignedSmallInteger('section_number');
+            $table->unsignedSmallInteger('unit_number');
             $table->timestamps();
         });
 
-        // Deduplicated vocabulary entries
+        // Deduplicated Han characters — stroke data lives here once per character
+        // rather than duplicated on every word_token that references it.
+        Schema::create('characters', function (Blueprint $table) {
+            $table->id();
+            $table->string('character')->unique();
+            $table->json('strokes')->nullable();
+            $table->timestamps();
+        });
+
         Schema::create('words', function (Blueprint $table) {
             $table->id();
-            $table->string('text')->unique();      // Chinese word/character(s), e.g. "水果"
-            $table->string('translation')->nullable(); // English gloss, e.g. "fruit"
-            $table->string('pinyin');               // Full romanisation, e.g. "shuǐguǒ"
-            $table->string('tts_url')->nullable();  // CloudFront audio URL
-            $table->string('state')->default('LOCKED'); // AVAILABLE | LOCKED
+            $table->string('text')->unique();
+            $table->string('translation')->nullable();
+            $table->string('pinyin');
+            $table->string('tts_url')->nullable();
             $table->timestamps();
         });
 
-        // Per-character pinyin breakdown for each word.
-        // Replaces the characterIndex from stats.json — query this table to find
-        // all words containing a given character instead of rebuilding it in PHP.
-        Schema::create('word_tokens', function (Blueprint $table) {
+        // Per-character breakdown of each word, ordered by position.
+        // Query word_tokens via character_id to find all words containing a given character.
+        Schema::create('word_characters', function (Blueprint $table) {
             $table->id();
             $table->foreignId('word_id')->constrained()->cascadeOnDelete();
-            $table->string('character');               // Single Han character, e.g. "水"
-            $table->string('pinyin');                  // Tone-marked pinyin for this character in context
-            $table->integer('position');  // 0-indexed position within the word
+            $table->foreignId('character_id')->constrained()->cascadeOnDelete();
+            $table->string('pinyin');
+            $table->unsignedSmallInteger('position');
             $table->timestamps();
 
-            $table->index('character');               // Fast character → words lookups
-            $table->unique(['word_id', 'position']);  // Enforce ordering integrity
+            $table->unique(['word_id', 'position']);
         });
 
-        // Many-to-many: a word can appear across multiple sections,
-        // and a section contains many words.
         Schema::create('section_word', function (Blueprint $table) {
             $table->foreignId('section_id')->constrained()->cascadeOnDelete();
             $table->foreignId('word_id')->constrained()->cascadeOnDelete();
             $table->primary(['section_id', 'word_id']);
         });
+
+        Schema::create('user_word', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('word_id')->constrained()->cascadeOnDelete();
+            $table->boolean('is_available')->default(false);
+            $table->timestamps();
+
+            $table->primary(['user_id', 'word_id']);
+        });
     }
 
     public function down(): void
     {
+        Schema::dropIfExists('user_word');
         Schema::dropIfExists('section_word');
-        Schema::dropIfExists('word_tokens');
+        Schema::dropIfExists('word_characters');
         Schema::dropIfExists('words');
+        Schema::dropIfExists('characters');
         Schema::dropIfExists('sections');
     }
 };
