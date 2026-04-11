@@ -16,6 +16,11 @@ class Character extends Model
         ];
     }
 
+    public function getRouteKeyName(): string
+    {
+        return 'character';
+    }
+
     public function wordCharacters(): HasMany
     {
         return $this->hasMany(WordCharacter::class);

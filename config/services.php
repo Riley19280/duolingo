@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'duolingo' => [
+        'jwt' => env('DUOLINGO_JWT'),
+        'alphabets_key' => env('DUOLINGO_ALPHABETS_KEY'),
+    ],
 ];

@@ -3,7 +3,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/水?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%B0%B4&fromLanguage=en&learningLanguage=zh&_=1775704923677",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -526,7 +525,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/咖?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%92%96&fromLanguage=en&learningLanguage=zh&_=1775704927465",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -682,7 +680,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/啡?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%95%A1&fromLanguage=en&learningLanguage=zh&_=1775704953265",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -806,7 +803,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/茶?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%8C%B6&fromLanguage=en&learningLanguage=zh&_=1775704954769",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -1053,7 +1049,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/米?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E7%B1%B3&fromLanguage=en&learningLanguage=zh&_=1775704956547",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -1294,7 +1289,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/饭?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E9%A5%AD&fromLanguage=en&learningLanguage=zh&_=1775704958213",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -1653,7 +1647,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/汤?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%B1%A4&fromLanguage=en&learningLanguage=zh&_=1775704959550",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -1719,7 +1712,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/热?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E7%83%AD&fromLanguage=en&learningLanguage=zh&_=1775704960938",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -1964,7 +1956,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/这?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%BF%99&fromLanguage=en&learningLanguage=zh&_=1775704962407",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -2329,7 +2320,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/是?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%98%AF&fromLanguage=en&learningLanguage=zh&_=1775704963897",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -2731,7 +2721,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/粥?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E7%B2%A5&fromLanguage=en&learningLanguage=zh&_=1775704965431",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -2803,7 +2792,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/豆?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%B1%86&fromLanguage=en&learningLanguage=zh&_=1775704967001",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -2949,7 +2937,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/腐?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%85%90&fromLanguage=en&learningLanguage=zh&_=1775704968465",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -3032,7 +3019,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/美?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E7%BE%8E&fromLanguage=en&learningLanguage=zh&_=1775704978781",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -3373,7 +3359,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/国?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%9B%BD&fromLanguage=en&learningLanguage=zh&_=1775704980163",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -3940,7 +3925,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/中?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%B8%AD&fromLanguage=en&learningLanguage=zh&_=1775704981447",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -4601,7 +4585,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/日?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%97%A5&fromLanguage=en&learningLanguage=zh&_=1775704982850",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -5074,7 +5057,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/本?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%9C%AC&fromLanguage=en&learningLanguage=zh&_=1775704984130",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -5414,7 +5396,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/我?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%88%91&fromLanguage=en&learningLanguage=zh&_=1775704985603",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -5880,7 +5861,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/你?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%BD%A0&fromLanguage=en&learningLanguage=zh&_=1775704986864",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -6229,7 +6209,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/呢?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%91%A2&fromLanguage=en&learningLanguage=zh&_=1775704988469",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -6385,7 +6364,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/是?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%98%AF&fromLanguage=en&learningLanguage=zh&_=1775704989880",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -6787,7 +6765,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/英?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%8B%B1&fromLanguage=en&learningLanguage=zh&_=1775704993081",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -6934,7 +6911,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/文?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%96%87&fromLanguage=en&learningLanguage=zh&_=1775704994314",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -7354,7 +7330,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/医?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%8C%BB&fromLanguage=en&learningLanguage=zh&_=1775704995564",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -7500,7 +7475,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/生?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E7%94%9F&fromLanguage=en&learningLanguage=zh&_=1775704996916",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -8621,7 +8595,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/老?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%80%81&fromLanguage=en&learningLanguage=zh&_=1775704998150",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -9014,7 +8987,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/师?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%B8%88&fromLanguage=en&learningLanguage=zh&_=1775704999580",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -9241,7 +9213,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/对?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%AF%B9&fromLanguage=en&learningLanguage=zh&_=1775705001030",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -9683,7 +9654,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/不?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%B8%8D&fromLanguage=en&learningLanguage=zh&_=1775705002314",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -10995,7 +10965,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/律?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%BE%8B&fromLanguage=en&learningLanguage=zh&_=1775705003713",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -11073,7 +11042,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/说?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%AF%B4&fromLanguage=en&learningLanguage=zh&_=1775705005391",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -11458,7 +11426,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/学?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%AD%A6&fromLanguage=en&learningLanguage=zh&_=1775705007098",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -12344,7 +12311,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/中?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%B8%AD&fromLanguage=en&learningLanguage=zh&_=1775705008503",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -13005,7 +12971,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/你?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%BD%A0&fromLanguage=en&learningLanguage=zh&_=1775705009980",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -13354,7 +13319,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/喜?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%96%9C&fromLanguage=en&learningLanguage=zh&_=1775705013970",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -13646,7 +13610,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/欢?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%AC%A2&fromLanguage=en&learningLanguage=zh&_=1775705015283",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -13935,7 +13898,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/课?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%AF%BE&fromLanguage=en&learningLanguage=zh&_=1775705016631",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -14040,7 +14002,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/大?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%A4%A7&fromLanguage=en&learningLanguage=zh&_=1775705017965",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -15127,7 +15088,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/数?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%95%B0&fromLanguage=en&learningLanguage=zh&_=1775705019605",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -15288,7 +15248,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/他?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%BB%96&fromLanguage=en&learningLanguage=zh&_=1775705021866",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -15458,7 +15417,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/音?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E9%9F%B3&fromLanguage=en&learningLanguage=zh&_=1775705023339",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -15846,7 +15804,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/乐?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%B9%90&fromLanguage=en&learningLanguage=zh&_=1775705024971",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -16347,7 +16304,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/她?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%A5%B9&fromLanguage=en&learningLanguage=zh&_=1775705026331",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -16448,7 +16404,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/学?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%AD%A6&fromLanguage=en&learningLanguage=zh&_=1775705027750",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -17334,7 +17289,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/生?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E7%94%9F&fromLanguage=en&learningLanguage=zh&_=1775705029181",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -18455,7 +18409,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/爸?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E7%88%B8&fromLanguage=en&learningLanguage=zh&_=1775705032330",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -18532,7 +18485,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/儿?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%84%BF&fromLanguage=en&learningLanguage=zh&_=1775705034297",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -19550,7 +19502,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/子?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%AD%90&fromLanguage=en&learningLanguage=zh&_=1775705036298",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -21175,7 +21126,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/妈?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%A6%88&fromLanguage=en&learningLanguage=zh&_=1775705038053",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -21250,7 +21200,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/公?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%85%AC&fromLanguage=en&learningLanguage=zh&_=1775705039464",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -21888,7 +21837,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/婆?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%A9%86&fromLanguage=en&learningLanguage=zh&_=1775705041131",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -22003,7 +21951,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/也?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%B9%9F&fromLanguage=en&learningLanguage=zh&_=1775705042567",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -22189,7 +22136,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/女?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%A5%B3&fromLanguage=en&learningLanguage=zh&_=1775705044164",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -22559,7 +22505,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/这?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%BF%99&fromLanguage=en&learningLanguage=zh&_=1775705045916",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -22924,7 +22869,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/是?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%98%AF&fromLanguage=en&learningLanguage=zh&_=1775705047298",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -23326,7 +23270,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/英?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%8B%B1&fromLanguage=en&learningLanguage=zh&_=1775705048668",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -23473,7 +23416,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/老?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%80%81&fromLanguage=en&learningLanguage=zh&_=1775705049931",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -23866,7 +23808,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/中?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%B8%AD&fromLanguage=en&learningLanguage=zh&_=1775705051464",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -24527,7 +24468,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/生?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E7%94%9F&fromLanguage=en&learningLanguage=zh&_=1775705052952",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -25648,7 +25588,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/去?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%8E%BB&fromLanguage=en&learningLanguage=zh&_=1775705057634",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -25897,7 +25836,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/常?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%B8%B8&fromLanguage=en&learningLanguage=zh&_=1775705058981",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -26164,7 +26102,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/书?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%B9%A6&fromLanguage=en&learningLanguage=zh&_=1775705060298",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -26593,7 +26530,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/店?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%BA%97&fromLanguage=en&learningLanguage=zh&_=1775705061697",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -26883,7 +26819,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/超?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%B6%85&fromLanguage=en&learningLanguage=zh&_=1775705063030",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -27069,7 +27004,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/市?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%B8%82&fromLanguage=en&learningLanguage=zh&_=1775705064435",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -27371,7 +27305,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/馆?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E9%A6%86&fromLanguage=en&learningLanguage=zh&_=1775705065997",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -27674,7 +27607,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/菜?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E8%8F%9C&fromLanguage=en&learningLanguage=zh&_=1775705067369",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -28054,7 +27986,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/吃?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E5%90%83&fromLanguage=en&learningLanguage=zh&_=1775705068714",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -28295,7 +28226,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/买?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%B9%B0&fromLanguage=en&learningLanguage=zh&_=1775705070098",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -28414,7 +28344,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/零?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E9%9B%B6&fromLanguage=en&learningLanguage=zh&_=1775705071435",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -29468,7 +29397,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/食?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E9%A3%9F&fromLanguage=en&learningLanguage=zh&_=1775705072886",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -29686,7 +29614,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/韩?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E9%9F%A9&fromLanguage=en&learningLanguage=zh&_=1775705074264",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -29802,7 +29729,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/饭?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E9%A5%AD&fromLanguage=en&learningLanguage=zh&_=1775705075931",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -30161,7 +30087,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/不?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E4%B8%8D&fromLanguage=en&learningLanguage=zh&_=1775705078148",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
@@ -31473,7 +31398,6 @@
     "url": "https://www-prod.duolingo.com/2017-06-30/alphabets/courses/zh/en/expandedViewInfo/文?alphabetsPathProgressKey=cebdc888b247c63561fa6e3ea2c0be01-de67034d18a7afecc83d76b11356d7cc-4&expandedViewId=%E6%96%87&fromLanguage=en&learningLanguage=zh&_=1775705079755",
     "method": "GET",
     "requestHeaders": {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjYzMDcyMDAwMDAsImlhdCI6MCwic3ViIjo0MDM4NDk5NzQ0MzEzMjB9.W7stTrmTbLdnd_9PguvBkREDrQc48YKf8Ric4RoDDFU",
       "X-Amzn-Trace-Id": "User=403849974431320",
       "X-Requested-With": "XMLHttpRequest",
       "Accept": "application/json; charset=UTF-8"
