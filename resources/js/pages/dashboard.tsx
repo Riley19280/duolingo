@@ -4,25 +4,15 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card'
+import { WordGrid } from '@/components/word-grid'
 import { dashboard } from '@/routes'
 import { show as characterShow } from '@/routes/characters'
+import { Character, Word } from '@/types'
 import {
     Head,
     Link,
     usePage,
 } from '@inertiajs/react'
-import React from 'react'
-
-interface Character {
-    character: string;
-}
-
-interface AvailableWord {
-    text: string;
-    pinyin: string;
-    translation: string | null;
-    ttsUrl: string | null;
-}
 
 interface Props {
     uniqueWords: number;
@@ -32,7 +22,7 @@ interface Props {
     sectionsCovered: number;
     totalSections: number;
     userCharacters: Character[];
-    availableWordList: AvailableWord[];
+    availableWordList: Word[];
 
     [key: string]: unknown;
 }
@@ -138,34 +128,8 @@ export default function Dashboard() {
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <div className="max-h-96 overflow-y-auto pr-1">
-                                <div className="grid grid-cols-[1fr_1fr_1fr] gap-x-4 gap-y-2">
-                                    {availableWordList.map((word) => (
-                                        <React.Fragment key={word.text}>
-                                            <span
-                                                className={
-                                                    word.ttsUrl
-                                                        ? 'cursor-pointer text-lg font-bold select-none hover:opacity-70'
-                                                        : 'text-lg font-bold'
-                                                }
-                                                onClick={() =>
-                                                    word.ttsUrl &&
-                                                    new Audio(
-                                                        word.ttsUrl,
-                                                    ).play()
-                                                }
-                                            >
-                                                {word.text}
-                                            </span>
-                                            <span className="self-center text-sm text-muted-foreground">
-                                                {word.pinyin}
-                                            </span>
-                                            <span className="self-center truncate text-right text-sm">
-                                                {word.translation}
-                                            </span>
-                                        </React.Fragment>
-                                    ))}
-                                </div>
+                            <div className="max-h-96 overflow-y-auto">
+                                <WordGrid words={availableWordList} />
                             </div>
                         </CardContent>
                     </Card>

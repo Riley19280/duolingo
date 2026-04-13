@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
-#[Signature('duolingo:download-tts {word? : Chinese text of a specific word to download}')]
+#[Signature('duolingo:fetch-tts {word? : Chinese text of a specific word to download}')]
 #[Description('Download missing TTS audio files into storage/app/public/tts')]
-class DownloadDuolingoTTS extends Command
+class FetchDuolingoTTS extends Command
 {
     private const DISK = 'public';
 

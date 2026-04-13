@@ -17,7 +17,7 @@ class FetchAllDuolingoCharactersCommand extends Command
 {
     public function handle(DuolingoApi $api, DuolingoImporter $importer): int
     {
-        if (!$api->isConfigured()) {
+        if (! $api->isConfigured()) {
             $this->error('DUOLINGO_JWT and DUOLINGO_ALPHABETS_KEY must be set in your .env file.');
 
             return self::FAILURE;
@@ -25,7 +25,7 @@ class FetchAllDuolingoCharactersCommand extends Command
 
         $user = User::first();
 
-        if (!$user) {
+        if (! $user) {
             $this->error('No users found — run the user seeder first.');
 
             return self::FAILURE;
@@ -37,7 +37,7 @@ class FetchAllDuolingoCharactersCommand extends Command
 
         do {
             $characters = Character::all()->filter(
-                fn(Character $c) => !File::exists(storage_path("app/raw/{$c->character}.json"))
+                fn (Character $c) => ! File::exists(storage_path("app/raw/{$c->character}.json"))
             );
 
             $round++;
@@ -49,14 +49,14 @@ class FetchAllDuolingoCharactersCommand extends Command
                 break;
             }
 
-            foreach($characters as $character) {
+            foreach ($characters as $character) {
                 if (in_array($character->character, $ignore)) {
                     continue;
                 }
 
                 try {
                     $isNew = $api->fetchCharacterIfNeeded($character->character);
-                } catch(\RuntimeException $e) {
+                } catch (\RuntimeException $e) {
                     $this->warn("  {$e->getMessage()}");
 
                     $ignore[] = $character->character;
@@ -64,7 +64,7 @@ class FetchAllDuolingoCharactersCommand extends Command
                     continue;
                 }
 
-                if (!$isNew) {
+                if (! $isNew) {
                     continue;
                 }
 
@@ -78,13 +78,14 @@ class FetchAllDuolingoCharactersCommand extends Command
             $this->line("  Processed {$fetched} new file(s).");
             $this->newLine();
             sleep(5);
-        } while($fetched > 0);
+        } while ($fetched > 0);
 
         $this->info('Done — all known characters have files on disk.');
 
+        $this->call(FetchDuolingoTTS::class);
+
         return self::SUCCESS;
     }
-
 
     public function ignoreList(): array
     {

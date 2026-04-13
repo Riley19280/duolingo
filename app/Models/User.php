@@ -29,6 +29,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Word::class)->using(UserWord::class)->withPivot('is_available')->withTimestamps();
     }
 
+    public function sections(): BelongsToMany
+    {
+        return $this->belongsToMany(Section::class)->using(UserSection::class)->withPivot('is_unlocked')->withTimestamps();
+    }
+
     protected function casts(): array
     {
         return [

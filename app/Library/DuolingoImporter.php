@@ -5,6 +5,7 @@ namespace App\Library;
 use App\Models\Character;
 use App\Models\Section;
 use App\Models\User;
+use App\Models\UserSection;
 use App\Models\UserWord;
 use App\Models\Word;
 use App\Models\WordCharacter;
@@ -45,6 +46,28 @@ class DuolingoImporter
                     ->whereNull('strokes')
                     ->update(['strokes' => json_encode($strokeData)]);
             }
+        });
+    }
+
+    /**
+     * Sync the is_unlocked state for all sections based on whether every word
+     * in the section has an available user_word record for the given user.
+     */
+    public function syncSectionUnlocks(User $user): void
+    {
+        Section::with('words:id')->get()->each(function (Section $section) use ($user) {
+            $wordIds = $section->words->pluck('id');
+
+            $allAvailable = $wordIds->isNotEmpty()
+                && UserWord::where('user_id', $user->id)
+                    ->whereIn('word_id', $wordIds)
+                    ->where('is_available', true)
+                    ->count() === $wordIds->count();
+
+            UserSection::updateOrCreate(
+                ['user_id' => $user->id, 'section_id' => $section->id],
+                ['is_unlocked' => $allAvailable]
+            );
         });
     }
 

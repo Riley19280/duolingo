@@ -63,6 +63,9 @@ class ImportDuolingoDataCommand extends Command
             }
         }
 
+        $this->line('  Syncing section unlocks…');
+        $importer->syncSectionUnlocks($user);
+
         $summary = $stats->summary();
 
         $this->newLine();
