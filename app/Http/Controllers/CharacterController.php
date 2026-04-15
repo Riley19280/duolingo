@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Character;
 use App\Models\User;
 use App\Models\Word;
-use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -31,9 +30,7 @@ class CharacterController extends Controller
                 'pinyin' => $w->pinyin,
                 'translation' => $w->translation,
                 'isAvailable' => $userWords->has($w->id) && $userWords->get($w->id)->pivot->is_available,
-                'ttsUrl' => Storage::disk('public')->exists("tts/{$w->text}.mp3")
-                    ? Storage::disk('public')->url("tts/{$w->text}.mp3")
-                    : null,
+                'ttsUrl' => $w->public_tts_url,
             ]),
         ]);
     }

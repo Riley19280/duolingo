@@ -8,33 +8,36 @@ use App\Enums\QuestionForm;
 use App\Models\PracticeAttempt;
 use App\Models\PracticeSession;
 use App\Models\PracticeSet;
-use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class PracticeSessionController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(PracticeSession::class, 'practiceSession');
+    }
+
     public function store(Request $request): RedirectResponse
     {
-        /** @var User $user */
-        $user = auth()->user();
-
         $validated = $request->validate([
-            'practice_set_id' => ['required', 'integer', 'exists:practice_sets,id'],
-            'exercise_type' => ['required', 'string', 'in:'.implode(',', array_column(ExerciseType::cases(), 'value'))],
-            'question_form' => ['required', 'string', 'in:'.implode(',', array_column(QuestionForm::cases(), 'value'))],
-            'answer_form' => ['required', 'string', 'in:'.implode(',', array_column(AnswerForm::cases(), 'value'))],
+            'practice_set_id' => ['required', 'integer', Rule::exists('practice_sets', 'id')],
+            'exercise_type' => ['required', Rule::enum(ExerciseType::class)],
+            'question_form' => ['required', Rule::enum(QuestionForm::class)],
+            'answer_form' => ['required', Rule::enum(AnswerForm::class)],
         ]);
 
         $set = PracticeSet::where('id', $validated['practice_set_id'])
-            ->where('user_id', $user->id)
+            ->where('user_id', Auth::user()->id)
             ->firstOrFail();
 
         $session = PracticeSession::create([
-            'user_id' => $user->id,
+            'user_id' => Auth::user()->id,
             'practice_set_id' => $set->id,
             'exercise_type' => $validated['exercise_type'],
             'question_form' => $validated['question_form'],
@@ -46,11 +49,6 @@ class PracticeSessionController extends Controller
 
     public function show(PracticeSession $practiceSession): Response
     {
-        /** @var User $user */
-        $user = auth()->user();
-
-        abort_if($practiceSession->user_id !== $user->id, 403);
-
         $words = [];
         $results = null;
 
@@ -73,8 +71,15 @@ class PracticeSessionController extends Controller
                 ]);
         } else {
             $words = $practiceSession->practiceSet?->words()
-                ->select('words.id', 'text', 'pinyin', 'translation', 'tts_url')
+                ->select('words.id', 'text', 'pinyin', 'translation')
                 ->get()
+                ->map(fn ($w) => [
+                    'id' => $w->id,
+                    'text' => $w->text,
+                    'pinyin' => $w->pinyin,
+                    'translation' => $w->translation,
+                    'ttsUrl' => $w->public_tts_url,
+                ])
                 ->shuffle()
                 ->values() ?? collect();
         }
@@ -94,14 +99,11 @@ class PracticeSessionController extends Controller
 
     public function complete(Request $request, PracticeSession $practiceSession): RedirectResponse
     {
-        /** @var User $user */
-        $user = auth()->user();
-
-        abort_if($practiceSession->user_id !== $user->id, 403);
+        $this->authorize('complete', $practiceSession);
 
         $validated = $request->validate([
             'attempts' => ['required', 'array', 'min:1'],
-            'attempts.*.word_id' => ['required', 'integer', 'exists:words,id'],
+            'attempts.*.word_id' => ['required', 'integer', Rule::exists('words', 'id')],
             'attempts.*.given_answer' => ['nullable', 'string', 'max:1000'],
             'attempts.*.correct_answer' => ['nullable', 'string', 'max:1000'],
             'attempts.*.is_correct' => ['required', 'boolean'],

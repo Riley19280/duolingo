@@ -7,7 +7,7 @@ use App\Enums\ExerciseType;
 use App\Enums\QuestionForm;
 use App\Models\PracticeSession;
 use App\Models\PracticeSet;
-use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -15,10 +15,8 @@ class PracticeController extends Controller
 {
     public function index(): Response
     {
-        /** @var User $user */
-        $user = auth()->user();
-
-        $sets = PracticeSet::where('user_id', $user->id)
+        $sets = PracticeSet::query()
+            ->where('user_id', Auth::user()->id)
             ->withCount('words')
             ->orderBy('name')
             ->get()
@@ -28,7 +26,8 @@ class PracticeController extends Controller
                 'wordsCount' => $set->words_count,
             ]);
 
-        $sessions = PracticeSession::where('user_id', $user->id)
+        $sessions = PracticeSession::query()
+            ->where('user_id', Auth::user()->id)
             ->whereNotNull('completed_at')
             ->with('practiceSet:id,name')
             ->withCount([
@@ -36,7 +35,7 @@ class PracticeController extends Controller
                 'attempts as correct_count' => fn ($q) => $q->where('is_correct', true),
             ])
             ->orderByDesc('completed_at')
-            ->limit(50)
+            ->limit(25)
             ->get()
             ->map(fn (PracticeSession $s) => [
                 'id' => $s->id,

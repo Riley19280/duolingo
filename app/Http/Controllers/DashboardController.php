@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Library\VocabularyStats;
 use App\Models\Section;
 use App\Models\User;
-use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -32,9 +31,7 @@ class DashboardController extends Controller
                 'text' => $w->text,
                 'pinyin' => $w->pinyin,
                 'translation' => $w->translation,
-                'ttsUrl' => Storage::disk('public')->exists("tts/{$w->text}.mp3")
-                    ? Storage::disk('public')->url("tts/{$w->text}.mp3")
-                    : null,
+                'ttsUrl' => $w->public_tts_url,
             ]),
         ]);
     }

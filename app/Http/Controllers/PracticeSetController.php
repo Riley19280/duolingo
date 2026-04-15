@@ -13,6 +13,11 @@ use Inertia\Response;
 
 class PracticeSetController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(PracticeSet::class, 'practiceSet');
+    }
+
     public function create(): Response
     {
         return Inertia::render('practice/sets/form', [
@@ -43,8 +48,6 @@ class PracticeSetController extends Controller
 
     public function edit(PracticeSet $practiceSet): Response
     {
-        $this->authorize('view', $practiceSet);
-
         return Inertia::render('practice/sets/form', [
             'practiceSet' => [
                 'id' => $practiceSet->id,
@@ -57,8 +60,6 @@ class PracticeSetController extends Controller
 
     public function update(Request $request, PracticeSet $practiceSet): RedirectResponse
     {
-        $this->authorize('update', $practiceSet);
-
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'word_ids' => ['required', 'array', 'min:1'],
@@ -73,8 +74,6 @@ class PracticeSetController extends Controller
 
     public function destroy(PracticeSet $practiceSet): RedirectResponse
     {
-        $this->authorize('delete', $practiceSet);
-
         $practiceSet->delete();
 
         return redirect()->route('practice.index');

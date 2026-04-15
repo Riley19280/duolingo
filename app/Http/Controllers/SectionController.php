@@ -8,7 +8,6 @@ use App\Models\UserSection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -69,9 +68,7 @@ class SectionController extends Controller
                 'pinyin' => $w->pinyin,
                 'translation' => $w->translation,
                 'isAvailable' => (bool) $w->is_available,
-                'ttsUrl' => Storage::disk('public')->exists("tts/{$w->text}.mp3")
-                    ? Storage::disk('public')->url("tts/{$w->text}.mp3")
-                    : null,
+                'ttsUrl' => $w->public_tts_url,
             ]),
         ]);
     }
