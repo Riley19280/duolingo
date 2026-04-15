@@ -1,0 +1,24 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('practice_attempts', function (Blueprint $table) {
+            $table->string('question_form')->after('exercise_type');
+            $table->string('answer_form')->after('question_form');
+            $table->json('options')->nullable()->after('answer_form'); // choices shown for multiple_choice/matching
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('practice_attempts', function (Blueprint $table) {
+            $table->dropColumn(['question_form', 'answer_form', 'options']);
+        });
+    }
+};

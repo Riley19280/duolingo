@@ -5,7 +5,6 @@ namespace App\Library;
 use App\Models\Character;
 use App\Models\Section;
 use App\Models\User;
-use App\Models\UserSection;
 use App\Models\UserWord;
 use App\Models\Word;
 use App\Models\WordCharacter;
@@ -64,9 +63,9 @@ class DuolingoImporter
                     ->where('is_available', true)
                     ->count() === $wordIds->count();
 
-            UserSection::updateOrCreate(
+            DB::table('user_section')->updateOrInsert(
                 ['user_id' => $user->id, 'section_id' => $section->id],
-                ['is_unlocked' => $allAvailable]
+                ['is_unlocked' => $allAvailable, 'updated_at' => now(), 'created_at' => now()]
             );
         });
     }

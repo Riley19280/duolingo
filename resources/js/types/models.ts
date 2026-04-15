@@ -3,6 +3,7 @@ export interface Character {
 }
 
 export interface Word {
+    id: number;
     text: string;
     pinyin: string;
     translation: string | null;
@@ -17,4 +18,11 @@ export interface Section {
     unitNumber: number;
     wordsCount?: number;
     isUnlocked?: boolean;
+    words?: Word[];
+}
+
+export interface PracticeSet {
+    id: number;
+    name: string;
+    wordIds: number[];
 }

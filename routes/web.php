@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PracticeController;
+use App\Http\Controllers\PracticeSessionController;
+use App\Http\Controllers\PracticeSetController;
 use App\Http\Controllers\SectionController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -13,9 +16,21 @@ Route::inertia('/', 'welcome', [
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', DashboardController::class)->name('dashboard');
     Route::get('characters/{character}', [CharacterController::class, 'show'])->name('characters.show');
-    Route::get('sections', [SectionController::class, 'index'])->name('sections.index');
-    Route::get('sections/{section}', [SectionController::class, 'show'])->name('sections.show');
-    Route::put('sections/{section}', [SectionController::class, 'update'])->name('sections.update');
+    Route::resource('practice', PracticeController::class)->only(['index']);
+    Route::resource('practice/sessions', PracticeSessionController::class)
+        ->only(['store', 'show'])
+        ->names('practice.sessions')
+        ->parameters(['sessions' => 'practiceSession']);
+    Route::post('practice/sessions/{practiceSession}/complete', [PracticeSessionController::class, 'complete'])
+        ->name('practice.sessions.complete')
+        ->middleware('auth');
+    Route::resource('practice/sets', PracticeSetController::class)
+        ->only(['create', 'store', 'edit', 'update', 'destroy'])
+        ->names('practice.sets')
+        ->parameters(['sets' => 'practiceSet']);
+
+    Route::resource('sections', SectionController::class)
+        ->only(['index', 'show', 'update']);
 });
 
 require __DIR__.'/settings.php';

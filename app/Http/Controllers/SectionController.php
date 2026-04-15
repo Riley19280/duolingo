@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\UserSection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -84,9 +85,9 @@ class SectionController extends Controller
             'is_unlocked' => ['required', 'boolean'],
         ]);
 
-        UserSection::updateOrCreate(
+        DB::table('user_section')->updateOrInsert(
             ['user_id' => $user->id, 'section_id' => $section->id],
-            ['is_unlocked' => $validated['is_unlocked']]
+            ['is_unlocked' => $validated['is_unlocked'], 'updated_at' => now(), 'created_at' => now()]
         );
 
         return back();
