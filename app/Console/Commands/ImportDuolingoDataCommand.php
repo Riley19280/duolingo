@@ -10,12 +10,12 @@ use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
 #[Signature('duolingo:import')]
-#[Description('Import all captured request files from storage/app/raw into the database')]
+#[Description('Import all captured request files from database/data into the database')]
 class ImportDuolingoDataCommand extends Command
 {
     public function handle(DuolingoImporter $importer, VocabularyStats $stats): int
     {
-        $rawPath = storage_path('app/raw');
+        $rawPath = database_path('data');
 
         if (! is_dir($rawPath)) {
             $this->error("Raw directory not found: {$rawPath}");
@@ -26,7 +26,7 @@ class ImportDuolingoDataCommand extends Command
         $files = glob("{$rawPath}/*.json");
 
         if (empty($files)) {
-            $this->warn('No JSON files found in storage/app/raw.');
+            $this->warn('No JSON files found in database/data.');
 
             return self::SUCCESS;
         }

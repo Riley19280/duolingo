@@ -7,11 +7,19 @@ use App\Http\Controllers\PracticeSessionController;
 use App\Http\Controllers\PracticeSetController;
 use App\Http\Controllers\SectionController;
 use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Features;
 
-Route::inertia('/', 'welcome', [
-    'canRegister' => Features::enabled(Features::registration()),
-])->name('home');
+Route::redirect('/', '/login')->name('home');
+// Route::inertia('/', 'welcome', [
+//    'canRegister' => Features::enabled(Features::registration()),
+// ])->name('home');
+
+Route::get('tts/{filename}', function (string $filename) {
+    $path = public_path('tts/'.urldecode($filename));
+
+    abort_if(! file_exists($path), 404);
+
+    return response()->file($path, ['Content-Type' => 'audio/mpeg']);
+})->where('filename', '.+\.mp3')->name('tts');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', DashboardController::class)->name('dashboard');

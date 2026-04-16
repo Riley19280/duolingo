@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Facades\Storage;
 
 #[Fillable(['text', 'translation', 'pinyin', 'tts_url'])]
 class Word extends Model
@@ -18,9 +17,19 @@ class Word extends Model
     protected function publicTtsUrl(): Attribute
     {
         return Attribute::make(
-            get: fn () => Storage::disk('public')->exists("tts/{$this->text}.mp3")
-                ? Storage::disk('public')->url("tts/{$this->text}.mp3")
-                : null,
+            get: function () {
+                $path = public_path("tts/{$this->text}.mp3");
+
+                if (! file_exists($path)) {
+                    return null;
+                }
+
+                if (config('nativephp-internal.running')) {
+                    return 'data:audio/mpeg;base64,'.base64_encode(file_get_contents($path));
+                }
+
+                return asset("tts/{$this->text}.mp3");
+            },
         );
     }
 

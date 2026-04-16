@@ -8,14 +8,11 @@ use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Storage;
 
 #[Signature('duolingo:fetch-tts {word? : Chinese text of a specific word to download}')]
-#[Description('Download missing TTS audio files into storage/app/public/tts')]
+#[Description('Download missing TTS audio files into public/tts')]
 class FetchDuolingoTTS extends Command
 {
-    private const DISK = 'public';
-
     private const DIR = 'tts';
 
     public function handle(): int
@@ -28,7 +25,7 @@ class FetchDuolingoTTS extends Command
             return self::SUCCESS;
         }
 
-        $this->info("Downloading {$words->count()} file(s) into storage/app/public/tts…");
+        $this->info("Downloading {$words->count()} file(s) into public/tts…");
         $this->newLine();
 
         $downloaded = 0;
@@ -40,7 +37,7 @@ class FetchDuolingoTTS extends Command
                 ->get($word->tts_url);
 
             if ($response->successful()) {
-                Storage::disk(self::DISK)->put(self::DIR."/{$word->text}.mp3", $response->body());
+                file_put_contents(public_path(self::DIR."/{$word->text}.mp3"), $response->body());
                 $downloaded++;
             } else {
                 $failed++;
@@ -70,9 +67,8 @@ class FetchDuolingoTTS extends Command
             return $query->where('text', $text)->get();
         }
 
-        // Filter to words whose file is not yet on disk
         return $query->get()->filter(
-            fn (Word $word) => ! Storage::disk(self::DISK)->exists(self::DIR."/{$word->text}.mp3")
+            fn (Word $word) => ! file_exists(public_path(self::DIR."/{$word->text}.mp3"))
         );
     }
 }
