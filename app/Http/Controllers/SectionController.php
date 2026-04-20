@@ -87,6 +87,16 @@ class SectionController extends Controller
             ['is_unlocked' => $validated['is_unlocked'], 'updated_at' => now(), 'created_at' => now()]
         );
 
+        $wordIds = $section->words()->pluck('words.id');
+
+        if ($validated['is_unlocked']) {
+            $user->words()->syncWithoutDetaching(
+                $wordIds->mapWithKeys(fn ($id) => [$id => ['is_available' => true]])->all()
+            );
+        } else {
+            $user->words()->detach($wordIds);
+        }
+
         return back();
     }
 }

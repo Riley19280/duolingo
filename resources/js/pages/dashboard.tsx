@@ -102,7 +102,7 @@ export default function Dashboard() {
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex max-h-96 flex-wrap gap-2 overflow-y-auto">
                                 {userCharacters.map(({ character }) => (
                                     <Link
                                         key={character}

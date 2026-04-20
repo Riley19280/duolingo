@@ -38,21 +38,24 @@ class SectionTest extends TestCase
         $response->assertOk();
         $response->assertInertia(fn ($page) => $page
             ->component('sections/index')
-            ->where('sections.0.id', $section->id)
-            ->where('sections.0.isUnlocked', true)
+            ->where('sections', fn ($sections) => collect($sections)->contains(
+                fn ($s) => $s['id'] === $section->id && $s['isUnlocked'] === true
+            ))
         );
     }
 
     public function test_sections_index_shows_locked_when_no_user_section_record(): void
     {
         $user = User::factory()->create();
-        Section::factory()->create();
+        $section = Section::factory()->create();
 
         $response = $this->actingAs($user)->get(route('sections.index'));
 
         $response->assertOk();
         $response->assertInertia(fn ($page) => $page
-            ->where('sections.0.isUnlocked', false)
+            ->where('sections', fn ($sections) => collect($sections)->contains(
+                fn ($s) => $s['id'] === $section->id && $s['isUnlocked'] === false
+            ))
         );
     }
 
@@ -125,5 +128,47 @@ class SectionTest extends TestCase
         $this->actingAs($user)
             ->put(route('sections.update', $section), [])
             ->assertSessionHasErrors('is_unlocked');
+    }
+
+    public function test_unlocking_a_section_makes_its_words_available(): void
+    {
+        $user = User::factory()->create();
+        $section = Section::factory()->create();
+        $word = Word::factory()->create();
+        $section->words()->attach($word->id);
+
+        $this->actingAs($user)
+            ->put(route('sections.update', $section), ['is_unlocked' => true])
+            ->assertRedirect();
+
+        $this->assertDatabaseHas('user_word', [
+            'user_id' => $user->id,
+            'word_id' => $word->id,
+            'is_available' => true,
+        ]);
+    }
+
+    public function test_locking_a_section_removes_its_words(): void
+    {
+        $user = User::factory()->create();
+        $section = Section::factory()->create();
+        $word = Word::factory()->create();
+        $section->words()->attach($word->id);
+        $user->words()->attach($word->id, ['is_available' => true]);
+
+        UserSection::create([
+            'user_id' => $user->id,
+            'section_id' => $section->id,
+            'is_unlocked' => true,
+        ]);
+
+        $this->actingAs($user)
+            ->put(route('sections.update', $section), ['is_unlocked' => false])
+            ->assertRedirect();
+
+        $this->assertDatabaseMissing('user_word', [
+            'user_id' => $user->id,
+            'word_id' => $word->id,
+        ]);
     }
 }

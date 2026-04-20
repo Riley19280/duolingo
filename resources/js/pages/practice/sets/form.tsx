@@ -148,7 +148,7 @@ export default function PracticeSetForm() {
             <div className="flex h-full flex-1 flex-col gap-4 p-4">
                 <form onSubmit={submit} className="flex flex-1 flex-col gap-4">
                     {/* Top bar */}
-                    <div className="flex items-start gap-3">
+                    <div className="flex flex-col gap-2 md:flex-row md:items-start md:gap-3">
                         <div className="flex flex-1 flex-col gap-1">
                             <Input
                                 id="name"
@@ -159,42 +159,42 @@ export default function PracticeSetForm() {
                             {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
                             {errors.word_ids && <p className="text-sm text-destructive">{errors.word_ids}</p>}
                         </div>
-                        <a
-                            href={practiceIndex.url()}
-                            className="rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent"
-                        >
-                            Cancel
-                        </a>
-                        <button
-                            type="submit"
-                            disabled={processing}
-                            className="cursor-pointer rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
-                        >
-                            {isEditing ? 'Save changes' : 'Create set'}
-                        </button>
+                        <div className="flex justify-end gap-2">
+                            <a
+                                href={practiceIndex.url()}
+                                className="rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent"
+                            >
+                                Cancel
+                            </a>
+                            <button
+                                type="submit"
+                                disabled={processing}
+                                className="cursor-pointer rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+                            >
+                                {isEditing ? 'Save changes' : 'Create set'}
+                            </button>
+                        </div>
                     </div>
 
                     {/* Two-column */}
-                    <div className="grid min-h-0 flex-1 grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 gap-4 md:min-h-0 md:flex-1 md:grid-cols-2">
                         {/* Left: sections */}
-                        <Card className="flex min-h-0 flex-col">
+                        <Card className="flex min-h-0 flex-col max-h-[45vh] md:max-h-none">
                             <CardHeader className="pb-3">
                                 <CardTitle className="flex items-center justify-between text-base">
                                     Sections
-                                    <label className="flex cursor-pointer items-center gap-2 text-sm font-normal text-muted-foreground">
+                                    <div className="flex cursor-pointer items-center gap-2 text-sm font-normal text-muted-foreground" onClick={() => setShowLocked((v) => !v)}>
                                         Show locked
-                                        <button
-                                            type="button"
+                                        <span
                                             role="switch"
                                             aria-checked={showLocked}
-                                            onClick={() => setShowLocked((v) => !v)}
-                                            className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors focus:outline-none ${showLocked ? 'bg-primary' : 'bg-input'}`}
+                                            className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors ${showLocked ? 'bg-primary' : 'bg-input'}`}
                                         >
                                             <span
                                                 className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white shadow transition-transform ${showLocked ? 'translate-x-4.75' : 'translate-x-0.75'}`}
                                             />
-                                        </button>
-                                    </label>
+                                        </span>
+                                    </div>
                                 </CardTitle>
                             </CardHeader>
                             <CardContent className="flex-1 overflow-y-auto px-0 pb-2">
@@ -234,7 +234,7 @@ export default function PracticeSetForm() {
                         </Card>
 
                         {/* Right: search + selected words */}
-                        <Card className="flex min-h-0 flex-col">
+                        <Card className="flex min-h-0 flex-col max-h-[45vh] md:max-h-none">
                             <CardHeader className="pb-3">
                                 <CardTitle className="text-base">
                                     {selectedIds.size} {selectedIds.size === 1 ? 'word' : 'words'} selected
@@ -260,12 +260,12 @@ export default function PracticeSetForm() {
                                                 key={word.id}
                                                 type="button"
                                                 onClick={() => addWord(word.id)}
-                                                className="flex w-full cursor-pointer items-center gap-3 px-4 py-2 text-left hover:bg-accent"
+                                                className="flex w-full cursor-pointer items-center justify-between px-4 py-2 text-left hover:bg-accent"
                                             >
                                                 <Plus className="size-3.5 shrink-0 text-muted-foreground" />
-                                                <span className="w-14 shrink-0 text-base font-bold">{word.text}</span>
-                                                <span className="w-24 shrink-0 text-sm text-muted-foreground">{word.pinyin}</span>
-                                                <span className="min-w-0 truncate text-sm">{word.translation}</span>
+                                                <span className="w-10 shrink-0 text-base font-bold">{word.text}</span>
+                                                <span className="text-sm text-muted-foreground">{word.pinyin}</span>
+                                                <span className="text-sm">{word.translation}</span>
                                             </button>
                                         ))}
                                     </div>
@@ -285,11 +285,11 @@ export default function PracticeSetForm() {
                                         selectedWords.map((word) => (
                                             <div
                                                 key={word.id}
-                                                className="flex items-center gap-3 px-4 py-2 hover:bg-accent"
+                                                className="flex items-center justify-between px-4 py-2 hover:bg-accent"
                                             >
-                                                <span className="w-14 shrink-0 text-base font-bold">{word.text}</span>
-                                                <span className="w-24 shrink-0 text-sm text-muted-foreground">{word.pinyin}</span>
-                                                <span className="min-w-0 flex-1 truncate text-sm">{word.translation}</span>
+                                                <span className="w-10 shrink-0 text-base font-bold">{word.text}</span>
+                                                <span className="text-sm text-muted-foreground">{word.pinyin}</span>
+                                                <span className="text-sm">{word.translation}</span>
                                                 <button
                                                     type="button"
                                                     onClick={() => removeWord(word.id)}

@@ -119,7 +119,7 @@ export default function PracticeIndex() {
         <>
             <Head title="Practice" />
             <div className="flex h-full flex-1 flex-col gap-4 p-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     {/* Sets list */}
                     <Card>
                         <CardHeader>
@@ -145,9 +145,9 @@ export default function PracticeIndex() {
                                         onClick={() => setSelectedSetId(set.id)}
                                         className={`flex cursor-pointer items-center gap-3 px-6 py-2.5 transition-colors hover:bg-accent ${selectedSetId === set.id ? 'bg-primary/10' : ''}`}
                                     >
-                                        <div className="flex flex-1 items-center gap-3 min-w-0">
+                                        <div className="flex flex-1 flex-col min-w-0">
                                             <span className="font-medium truncate">{set.name}</span>
-                                            <span className="shrink-0 text-xs text-muted-foreground">{set.wordsCount} words</span>
+                                            <span className="text-xs text-muted-foreground">{set.wordsCount} words</span>
                                         </div>
                                         <div className="flex shrink-0 items-center gap-1">
                                             <Link
@@ -205,7 +205,7 @@ export default function PracticeIndex() {
                                             {Object.values(errors)[0]}
                                         </p>
                                     )}
-                                    <div className="flex items-center justify-between pt-1">
+                                    <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
                                         <span className="text-sm text-muted-foreground">
                                             {selectedSetId
                                                 ? `${sets.find((s) => s.id === selectedSetId)?.name}`
@@ -233,6 +233,7 @@ export default function PracticeIndex() {
                             <CardTitle>History</CardTitle>
                         </CardHeader>
                         <CardContent className="px-0 pb-0">
+                            <div className="overflow-x-auto">
                             <table className="w-full text-sm">
                                 <thead>
                                     <tr className="border-b text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
@@ -266,6 +267,7 @@ export default function PracticeIndex() {
                                     })}
                                 </tbody>
                             </table>
+                            </div>
                         </CardContent>
                     </Card>
                 )}
