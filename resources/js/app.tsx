@@ -34,6 +34,16 @@ createInertiaApp({
     progress: {
         color: '#4B5563',
     },
+    defaults: {
+        visitOptions: (href, options) => {
+            return {
+                headers: {
+                    ...options.headers,
+                    'X-Body': JSON.stringify(options.data),
+                },
+            };
+        },
+    },
 });
 
 // This will set light / dark mode on load...
