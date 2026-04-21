@@ -1,6 +1,7 @@
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import { Pencil, Play, Trash2 } from 'lucide-react';
 import { useState } from 'react';
+import { useLocalStorage } from '@uidotdev/usehooks';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { index as practiceIndex } from '@/routes/practice';
 import { store as storeSession } from '@/routes/practice/sessions/index';
@@ -80,10 +81,10 @@ function RadioGroup({
 export default function PracticeIndex() {
     const { sets, sessions, exerciseTypes, questionForms, answerForms } = usePage<Props>().props;
 
-    const [selectedSetId, setSelectedSetId] = useState<number | null>(sets[0]?.id ?? null);
-    const [exerciseType, setExerciseType] = useState(exerciseTypes[0]?.value ?? '');
-    const [questionForm, setQuestionForm] = useState(questionForms[0]?.value ?? '');
-    const [answerForm, setAnswerForm] = useState(answerForms[0]?.value ?? '');
+    const [selectedSetId, setSelectedSetId] = useLocalStorage<number | null>('practice-set-id', sets[0]?.id ?? null);
+    const [exerciseType, setExerciseType] = useLocalStorage('practice-exercise-type', exerciseTypes[0]?.value ?? '');
+    const [questionForm, setQuestionForm] = useLocalStorage('practice-question-form', questionForms[0]?.value ?? '');
+    const [answerForm, setAnswerForm] = useLocalStorage('practice-answer-form', answerForms[0]?.value ?? '');
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [processing, setProcessing] = useState(false);
 
@@ -91,7 +92,12 @@ export default function PracticeIndex() {
         if (!confirm('Delete this practice set?')) {
             return;
         }
+
         router.delete(destroySet.url(id));
+
+        if(selectedSetId === id) {
+            setSelectedSetId(null)
+        }
     }
 
     function startPractice() {
