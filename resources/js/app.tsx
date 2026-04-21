@@ -39,7 +39,11 @@ createInertiaApp({
             return {
                 headers: {
                     ...options.headers,
-                    'X-Body': JSON.stringify(options.data),
+                    'X-Body': btoa(
+                        unescape(
+                            encodeURIComponent(JSON.stringify(options.data)),
+                        ),
+                    ),
                 },
             };
         },

@@ -2,10 +2,15 @@ import { index as practiceIndex } from '@/routes/practice';
 import type { SessionResult } from './types';
 
 export function ResultsScreen({ results }: { results: SessionResult[] }) {
-    const correct = results.filter((r) => r.isCorrect).length;
-    const total = results.length;
+    const wordIds = [...new Set(results.map((x) => x.wordId))];
+    const total = wordIds.length;
+    const correct = wordIds.filter((id) => !results.some((r) => r.wordId === id && !r.isCorrect)).length;
     const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
-    const wrong = results.filter((r) => !r.isCorrect);
+
+    // One entry per word that had at least one incorrect attempt
+    const wrong = wordIds
+        .filter((id) => results.some((r) => r.wordId === id && !r.isCorrect))
+        .map((id) => results.find((r) => r.wordId === id)!);
 
     const scoreColor =
         pct >= 80
@@ -31,7 +36,12 @@ export function ResultsScreen({ results }: { results: SessionResult[] }) {
                     <div className="divide-y rounded-lg border">
                         {wrong.map((r) => (
                             <div key={r.wordId} className="flex items-center gap-4 px-4 py-3">
-                                <span className="w-14 shrink-0 text-xl font-bold">{r.word.text}</span>
+                                <span
+                                    className={`w-14 shrink-0 text-xl font-bold ${r.word.ttsUrl ? 'cursor-pointer' : ''}`}
+                                    onClick={() => r.word.ttsUrl && new Audio(r.word.ttsUrl).play()}
+                                >
+                                    {r.word.text}
+                                </span>
                                 <span className="w-24 shrink-0 text-sm text-muted-foreground">{r.word.pinyin}</span>
                                 <span className="min-w-0 flex-1 truncate text-sm">{r.word.translation}</span>
                                 <div className="text-right text-sm">

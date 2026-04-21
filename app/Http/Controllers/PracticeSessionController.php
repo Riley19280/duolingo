@@ -54,7 +54,7 @@ class PracticeSessionController extends Controller
 
         if ($practiceSession->completed_at) {
             $results = $practiceSession->attempts()
-                ->with('word:id,text,pinyin,translation')
+                ->with('word:id,text,pinyin,translation,tts_path')
                 ->orderBy('id')
                 ->get()
                 ->map(fn (PracticeAttempt $a) => [
@@ -63,6 +63,7 @@ class PracticeSessionController extends Controller
                         'text' => $a->word->text,
                         'pinyin' => $a->word->pinyin,
                         'translation' => $a->word->translation,
+                        'ttsUrl' => $a->word->public_tts_url,
                     ],
                     'isCorrect' => $a->is_correct,
                     'givenAnswer' => $a->given_answer,

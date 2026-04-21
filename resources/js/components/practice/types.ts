@@ -8,7 +8,7 @@ export interface Session {
 
 export interface SessionResult {
     wordId: number;
-    word: { text: string; pinyin: string; translation: string | null };
+    word: { text: string; pinyin: string; translation: string | null; ttsUrl: string | null };
     isCorrect: boolean;
     givenAnswer: string | null;
     correctAnswer: string;
@@ -23,5 +23,3 @@ export interface LocalAttempt {
     response_time_ms: number;
     options: string[] | null;
 }
-
-export const MATCH_BATCH_SIZE = 6;

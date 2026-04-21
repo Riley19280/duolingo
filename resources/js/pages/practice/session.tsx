@@ -1,12 +1,11 @@
 import { Head, router, usePage } from '@inertiajs/react';
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { FeedbackBar } from '@/components/practice/FeedbackBar';
 import { MatchingExercise } from '@/components/practice/MatchingExercise';
 import { MultipleChoiceExercise } from '@/components/practice/MultipleChoiceExercise';
 import { ResultsScreen } from '@/components/practice/ResultsScreen';
 import { TypingExercise } from '@/components/practice/TypingExercise';
-import { MATCH_BATCH_SIZE } from '@/components/practice/types';
 import type { LocalAttempt, Session, SessionResult } from '@/components/practice/types';
 import { index as practiceIndex } from '@/routes/practice';
 import { complete as completeRoute } from '@/routes/practice/sessions/index';
@@ -23,20 +22,21 @@ export default function PracticeSession() {
     const { session, words, results } = usePage<Props>().props;
 
     const [wordIndex, setWordIndex] = useState(0);
-    const [batchStart, setBatchStart] = useState(0);
     const [pendingAttempts, setPendingAttempts] = useState<LocalAttempt[]>([]);
     const [feedbackAttempt, setFeedbackAttempt] = useState<LocalAttempt | null>(null);
     const [processing, setProcessing] = useState(false);
 
     const isMatching = session.exerciseType === 'matching';
     const totalWords = words.length;
-    const completedCount = pendingAttempts.length;
+    const completedCount =  isMatching ? pendingAttempts.filter(attempt => attempt.is_correct).length : wordIndex;
 
-    const finishSession = useCallback(
-        (allAttempts: LocalAttempt[]) => {
+    const finishSession = useCallback((attempts: LocalAttempt[]) => {
             setProcessing(true);
-            router.post(completeRoute.url(session.id), { attempts: allAttempts } as any, {
-                onFinish: () => setProcessing(false),
+            router.post(completeRoute.url(session.id), { attempts: attempts } as any, {
+                onFinish: () => {
+                    setProcessing(false);
+                    setPendingAttempts([])
+                },
             });
         },
         [session.id],
@@ -44,42 +44,31 @@ export default function PracticeSession() {
 
     // MC and Typing: user answered — show feedback bar
     const handleAnswer = useCallback((attempt: LocalAttempt) => {
+        const newAttempts = [...pendingAttempts, attempt]
+
         setFeedbackAttempt(attempt);
-    }, []);
+        setPendingAttempts(newAttempts)
+
+        if (isMatching) {
+            if (newAttempts.filter((attempt) => attempt.is_correct).length >= totalWords) {
+                finishSession(newAttempts);
+            } else {
+                setWordIndex(pendingAttempts.filter((attempt) => attempt.is_correct).length,);
+            }
+        }
+    }, [finishSession, isMatching, pendingAttempts, totalWords]);
 
     // MC and Typing: Continue pressed in feedback bar — advance
     const handleContinue = useCallback(() => {
-        if (!feedbackAttempt) {
-            return;
-        }
-
-        const newAttempts = [...pendingAttempts, feedbackAttempt];
         const nextIndex = wordIndex + 1;
-        setPendingAttempts(newAttempts);
         setFeedbackAttempt(null);
 
         if (nextIndex >= totalWords) {
-            finishSession(newAttempts);
+            finishSession(pendingAttempts);
         } else {
             setWordIndex(nextIndex);
         }
-    }, [feedbackAttempt, pendingAttempts, wordIndex, totalWords, finishSession]);
-
-    // Matching: batch complete
-    const handleBatchComplete = useCallback(
-        (batchAttempts: LocalAttempt[]) => {
-            const newAttempts = [...pendingAttempts, ...batchAttempts];
-            const nextBatch = batchStart + MATCH_BATCH_SIZE;
-            setPendingAttempts(newAttempts);
-
-            if (nextBatch >= totalWords) {
-                finishSession(newAttempts);
-            } else {
-                setBatchStart(nextBatch);
-            }
-        },
-        [pendingAttempts, batchStart, totalWords, finishSession],
-    );
+    }, [wordIndex, totalWords, finishSession, pendingAttempts]);
 
     if (session.completedAt && results) {
         return (
@@ -116,7 +105,6 @@ export default function PracticeSession() {
     }
 
     const progress = completedCount / totalWords;
-    const currentBatch = words.slice(batchStart, batchStart + MATCH_BATCH_SIZE);
 
     return (
         <>
@@ -128,11 +116,6 @@ export default function PracticeSession() {
                         <span>
                             {completedCount} / {totalWords}
                         </span>
-                        {!isMatching && (
-                            <span>
-                                {wordIndex + 1} of {totalWords}
-                            </span>
-                        )}
                     </div>
                     <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
                         <div
@@ -144,7 +127,9 @@ export default function PracticeSession() {
 
                 {/* Exercise card */}
                 <div className="flex flex-1 flex-col items-center">
-                    <div className={`w-full ${isMatching ? 'max-w-2xl' : 'max-w-lg'}`}>
+                    <div
+                        className={`w-full ${isMatching ? 'max-w-2xl' : 'max-w-lg'}`}
+                    >
                         <Card>
                             <CardContent className="p-6">
                                 {session.exerciseType === 'multiple_choice' && (
@@ -166,10 +151,9 @@ export default function PracticeSession() {
                                 )}
                                 {session.exerciseType === 'matching' && (
                                     <MatchingExercise
-                                        key={batchStart}
-                                        words={currentBatch}
+                                        words={words}
                                         session={session}
-                                        onBatchComplete={handleBatchComplete}
+                                        onAnswer={handleAnswer}
                                     />
                                 )}
                             </CardContent>

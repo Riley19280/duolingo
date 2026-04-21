@@ -10,7 +10,8 @@ export function getQuestionText(word: Word, questionForm: string): string | null
     if (questionForm === 'character') return word.text;
     if (questionForm === 'pinyin') return word.pinyin;
     if (questionForm === 'english') return word.translation ?? word.pinyin;
-    return null; // audio
+    if (questionForm === 'audio') return '🔊';
+    return null;
 }
 
 export function stripDiacritics(s: string): string {

@@ -25,7 +25,7 @@ class NativeBridgePostFixMiddleware
     {
         $raw = $request->header('X-Body');
         if ($raw) {
-            $data = json_decode($raw, true);
+            $data = json_decode(urldecode(base64_decode($raw)), true);
             if (is_array($data)) {
                 $request->merge($data);
             }
