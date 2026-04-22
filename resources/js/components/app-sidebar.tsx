@@ -1,5 +1,5 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, FolderGit2, LayoutGrid, Layers, Dumbbell } from 'lucide-react';
+import { BookOpen, FolderGit2, LayoutGrid, Layers, Dumbbell, Languages } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
@@ -16,6 +16,7 @@ import {
 import { dashboard } from '@/routes';
 import { index as practiceIndex } from '@/routes/practice';
 import { index as sectionsIndex } from '@/routes/sections';
+import { index as wordsIndex } from '@/routes/words';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
@@ -28,6 +29,11 @@ const mainNavItems: NavItem[] = [
         title: 'Sections',
         href: sectionsIndex.url(),
         icon: Layers,
+    },
+    {
+        title: 'Words',
+        href: wordsIndex.url(),
+        icon: Languages,
     },
     {
         title: 'Practice',

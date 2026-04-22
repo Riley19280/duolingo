@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\PracticeSessionController;
 use App\Http\Controllers\PracticeSetController;
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\WordController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login')->name('home');
@@ -39,6 +41,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::resource('sections', SectionController::class)
         ->only(['index', 'show', 'update']);
+
+    Route::get('words', [WordController::class, 'index'])->name('words.index');
+    Route::resource('words.notes', NoteController::class)
+        ->only(['store', 'update'])
+        ->shallow();
+    Route::delete('notes/{note}', [NoteController::class, 'destroy'])->name('notes.destroy');
 });
 
 require __DIR__.'/settings.php';
