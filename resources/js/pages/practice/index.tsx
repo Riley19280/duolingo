@@ -32,6 +32,7 @@ interface EnumOption {
 interface Props {
     sets: PracticeSet[];
     sessions: PracticeSessionRow[];
+    exerciseStructures: EnumOption[];
     exerciseTypes: EnumOption[];
     questionForms: EnumOption[];
     answerForms: EnumOption[];
@@ -79,9 +80,10 @@ function RadioGroup({
 }
 
 export default function PracticeIndex() {
-    const { sets, sessions, exerciseTypes, questionForms, answerForms } = usePage<Props>().props;
+    const { sets, sessions, exerciseStructures, exerciseTypes, questionForms, answerForms } = usePage<Props>().props;
 
     const [selectedSetId, setSelectedSetId] = useLocalStorage<number | null>('practice-set-id', sets[0]?.id ?? null);
+    const [exerciseStructure, setExerciseStructure] = useLocalStorage('practice-exercise-structure', exerciseStructures[0]?.value ?? '');
     const [exerciseType, setExerciseType] = useLocalStorage('practice-exercise-type', exerciseTypes[0]?.value ?? '');
     const [questionForm, setQuestionForm] = useLocalStorage('practice-question-form', questionForms[0]?.value ?? '');
     const [answerForm, setAnswerForm] = useLocalStorage('practice-answer-form', answerForms[0]?.value ?? '');
@@ -110,6 +112,7 @@ export default function PracticeIndex() {
             storeSession.url(),
             {
                 practice_set_id: selectedSetId,
+                exercise_structure: exerciseStructure,
                 exercise_type: exerciseType,
                 question_form: questionForm,
                 answer_form: answerForm,
@@ -188,6 +191,12 @@ export default function PracticeIndex() {
                                 <p className="text-sm text-muted-foreground">Create a practice set first.</p>
                             ) : (
                                 <>
+                                    <RadioGroup
+                                        label="Exercise Structure"
+                                        options={exerciseStructures}
+                                        value={exerciseStructure}
+                                        onChange={setExerciseStructure}
+                                    />
                                     <RadioGroup
                                         label="Exercise Type"
                                         options={exerciseTypes}

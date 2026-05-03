@@ -4,9 +4,11 @@ import type { LocalAttempt } from './types';
 
 export function FeedbackBar({
     attempt,
+    ttsUrl,
     onContinue,
 }: {
     attempt: LocalAttempt;
+    ttsUrl?: string | null;
     onContinue: () => void;
 }) {
     const continueRef = useRef<HTMLButtonElement>(null);
@@ -25,10 +27,18 @@ export function FeedbackBar({
                 ) : (
                     <XCircle className="size-5 text-red-500 dark:text-red-400" />
                 )}
-                <span
-                    className={`font-medium ${attempt.is_correct ? 'text-green-700 dark:text-green-300' : 'text-red-600 dark:text-red-300'}`}
-                >
-                    {attempt.is_correct ? 'Correct!' : `Answer: ${attempt.correct_answer}`}
+                <span className={`font-medium ${attempt.is_correct ? 'text-green-700 dark:text-green-300' : 'text-red-600 dark:text-red-300'}`}>
+                    {attempt.is_correct ? 'Correct!' : (
+                        <>
+                            Answer:{' '}
+                            <span
+                                className={ttsUrl ? 'cursor-pointer underline-offset-2 hover:underline' : ''}
+                                onClick={() => ttsUrl && new Audio(ttsUrl).play()}
+                            >
+                                {attempt.correct_answer}
+                            </span>
+                        </>
+                    )}
                 </span>
             </div>
             <button

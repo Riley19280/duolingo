@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\AnswerForm;
+use App\Enums\ExerciseStructure;
 use App\Enums\ExerciseType;
 use App\Enums\QuestionForm;
 use App\Models\PracticeSession;
@@ -51,6 +52,7 @@ class PracticeController extends Controller
         return Inertia::render('practice/index', [
             'sets' => $sets,
             'sessions' => $sessions,
+            'exerciseStructures' => array_map(fn (ExerciseStructure $e) => ['value' => $e->value, 'label' => $e->label()], ExerciseStructure::cases()),
             'exerciseTypes' => array_map(fn (ExerciseType $e) => ['value' => $e->value, 'label' => $e->label()], ExerciseType::cases()),
             'questionForms' => array_map(fn (QuestionForm $q) => ['value' => $q->value, 'label' => $q->label()], QuestionForm::cases()),
             'answerForms' => array_map(fn (AnswerForm $a) => ['value' => $a->value, 'label' => $a->label()], AnswerForm::cases()),

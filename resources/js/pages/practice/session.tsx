@@ -161,7 +161,11 @@ export default function PracticeSession() {
 
                         {/* Feedback bar (MC and Typing) */}
                         {feedbackAttempt && !isMatching && (
-                            <FeedbackBar attempt={feedbackAttempt} onContinue={handleContinue} />
+                            <FeedbackBar
+                                attempt={feedbackAttempt}
+                                ttsUrl={words.find((w) => w.id === feedbackAttempt.word_id)?.ttsUrl}
+                                onContinue={handleContinue}
+                            />
                         )}
                     </div>
                 </div>

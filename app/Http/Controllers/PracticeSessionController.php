@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Ai\Agents\SentenceGenerator;
 use App\Enums\AnswerForm;
+use App\Enums\ExerciseStructure;
 use App\Enums\ExerciseType;
 use App\Enums\QuestionForm;
 use App\Models\PracticeAttempt;
@@ -27,6 +29,7 @@ class PracticeSessionController extends Controller
     {
         $validated = $request->validate([
             'practice_set_id' => ['required', 'integer', Rule::exists('practice_sets', 'id')],
+            'exercise_structure' => ['required', Rule::enum(ExerciseStructure::class)],
             'exercise_type' => ['required', Rule::enum(ExerciseType::class)],
             'question_form' => ['required', Rule::enum(QuestionForm::class)],
             'answer_form' => ['required', Rule::enum(AnswerForm::class)],
@@ -39,6 +42,7 @@ class PracticeSessionController extends Controller
         $session = PracticeSession::create([
             'user_id' => Auth::user()->id,
             'practice_set_id' => $set->id,
+            'exercise_structure' => $validated['exercise_structure'],
             'exercise_type' => $validated['exercise_type'],
             'question_form' => $validated['question_form'],
             'answer_form' => $validated['answer_form'],
@@ -71,18 +75,34 @@ class PracticeSessionController extends Controller
                     'responseTimeMs' => $a->response_time_ms,
                 ]);
         } else {
-            $words = $practiceSession->practiceSet?->words()
-                ->select('words.id', 'text', 'pinyin', 'translation')
-                ->get()
-                ->map(fn ($w) => [
-                    'id' => $w->id,
-                    'text' => $w->text,
-                    'pinyin' => $w->pinyin,
-                    'translation' => $w->translation,
-                    'ttsUrl' => $w->public_tts_url,
-                ])
-                ->shuffle()
-                ->values() ?? collect();
+            $words = match ($practiceSession->exercise_structure) {
+                ExerciseStructure::Word => (function () {
+                    return $practiceSession->practiceSet?->words()
+                        ->select('words.id', 'text', 'pinyin', 'translation')
+                        ->get()
+                        ->map(fn ($w) => [
+                            'id' => $w->id,
+                            'text' => $w->text,
+                            'pinyin' => $w->pinyin,
+                            'translation' => $w->translation,
+                            'ttsUrl' => $w->public_tts_url,
+                        ])
+                        ->shuffle()
+                        ->values() ?? collect();
+                })(),
+                ExerciseStructure::Sentence => (function () {
+                    $sentences = (new SentenceGenerator)->prompt('go')['sentences'];
+
+                    return collect($sentences)
+                        ->map(fn ($sentence, $idx) => [
+                            'id' => $idx,
+                            'text' => $sentence['chinese'],
+                            'pinyin' => $sentence['pinyin'],
+                            'translation' => $sentence['english'],
+                            'ttsUrl' => null,
+                        ]);
+                })()
+            };
         }
 
         return Inertia::render('practice/session', [
